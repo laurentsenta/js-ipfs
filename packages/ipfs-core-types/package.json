@@ -9,7 +9,8 @@
     "clean": "rimraf ./dist",
     "lint": "aegir ts -p check && aegir lint",
     "build": "aegir build && copyfiles src/* src/**/* package.json README.md CHANGELOG.md COPYRIGHT LICENSE-APACHE LICENSE-MIT dist",
-    "doc": "npx typedoc src/index.ts src/**/*.ts"
+    "doc:html": "npx typedoc --plugin none src/index.ts src/root.ts src/**/*.ts --out ./docs/html",
+    "doc:md": "npx typedoc --plugin typedoc-plugin-markdown src/index.ts src/root.ts src/**/*.ts --out ./docs/md"
   },
   "files": [
     "*",
